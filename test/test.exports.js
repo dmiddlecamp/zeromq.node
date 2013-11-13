@@ -93,20 +93,20 @@ if (semver.gte(zmq.version, '3.3.0')) {
 }
 
 constants.forEach(function(typeOrProp){
-  zmq['ZMQ_' + typeOrProp].should.be.a('number');
+  zmq['ZMQ_' + typeOrProp].should.be.a.Number;
 });
 
 // states
 
 ['STATE_READY', 'STATE_BUSY', 'STATE_CLOSED'].forEach(function(state){
-  zmq[state].should.be.a('number');
-})
+  zmq[state].should.be.a.Number;
+});
 
 // constructors
 
-zmq.Context.should.be.a('function');
-zmq.Socket.should.be.a('function');
+zmq.Context.should.be.a.Function;
+zmq.Socket.should.be.a.Function;
 
 // methods
 
-zmq.socket.should.be.a('function');
+zmq.socket.should.be.a.Function;
